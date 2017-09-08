@@ -87,7 +87,12 @@ class Confetti extends Component {
 
   render() {
       let {left, ...otherProps} = this.props;
-      return <Animated.View style={[styles.confetti, this.getConfettiStyle(), this.getTransformStyle(), {marginLeft: this.left, backgroundColor: this.color}]} {...otherProps}/>
+      return (
+        <Animated.View style={[styles.confetti, this.getConfettiStyle(), this.getTransformStyle(), {marginLeft: this.left, backgroundColor: this.color}]} {...otherProps}>
+          {this.props.children}
+        </Animated.View>
+      );
+
   }
 }
 
